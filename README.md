@@ -36,8 +36,6 @@ text will flip back when the visitor toggles language.
 
 ## Still to update for this campaign
 
-- [ ] **Campaign start date** — the hero announcement still reads *"From July 13"*
-      (`announcement` key in both locales of `script.js`, and [index.html](index.html#L47)).
 - [ ] **Open positions** — the six roles are carried over from summer
       (`positions.list` in both locales, and the `<ul id="positions">` fallback).
 - [ ] **Application form link** — confirm the Tally/Google form target is the

@@ -10,6 +10,10 @@ const announcement = document.getElementById('announcement');
 const positionsList = document.getElementById('positions');
 const pageTitle = document.getElementById('pageTitle');
 
+// Candidate application form. Also hardcoded on the Apply Now buttons and the
+// hero position card in index.html — if it changes, update it in both places.
+const APPLY_FORM_URL = 'https://tally.so/r/Me4j7p';
+
 // Translations dictionary (English + French)
 const translations = {
     en: {
@@ -18,11 +22,12 @@ const translations = {
         hero: { subtitle: 'Join Stellantis Morocco and start your professional journey', description: "A unique opportunity to join one of the world's leading automotive manufacturers without an initial CV pre-selection." },
         meta: { location: 'Location: Stellantis Kénitra', recruitment: 'Autumn Recruitment' },
         video: { title: 'Kénitra Plant Capacity', caption: 'Mounir Kharbouche (Stellantis): "l\'usine de Kénitra a atteint une capacité de 535 000 véhicules"' },
-        announcement: 'From July 13 — We are hiring for:',
+        announcement: 'From September 14 — We are hiring for:',
         positions: {
             title: 'Open Positions',
-            description: 'These are the roles we are looking for in our autumn recruitment campaign.',
-            list: ['Maintenance Unit Manager','Manufacturing Unit Manager','Maintenance Technician','Facilities Technician','Maintenance Apprentice','Other Position']
+            description: 'This is the role we are looking for in our autumn recruitment campaign.',
+            featured: 'Technicien Usinage – Pilote Système de Production – Usinage',
+            list: ['Technicien Usinage – Pilote Système de Production – Usinage']
         },
         btn: { apply: 'Apply Now', discover: 'Discover the Program' },
         about: { title: 'Why Stellantis Morocco?', text: "Stellantis is one of the world's leading automotive manufacturers, bringing together iconic brands and innovative technologies. At the Kenitra plant, we are committed to excellence, innovation, and the development of young talent. Every year, we welcome motivated candidates who wish to gain valuable industrial experience while contributing to the future of sustainable mobility.", highlight1: 'Global Company', highlight2: 'Innovation', highlight3: 'Career Opportunities', highlight4: 'Professional Growth' },
@@ -39,11 +44,12 @@ const translations = {
         hero: { subtitle: 'Rejoignez Stellantis Maroc et commencez votre parcours professionnel', description: "Une opportunité unique de rejoindre l'un des principaux constructeurs automobiles mondiaux sans présélection de CV." },
         meta: { location: 'Lieu : Stellantis Kénitra', recruitment: "Recrutement d'automne" },
         video: { title: 'Capacité de l\'usine de Kénitra', caption: 'Mounir Kharbouche (Stellantis) : "l\'usine de Kénitra a atteint une capacité de 535 000 véhicules"' },
-        announcement: "À partir du 13 juillet — Nous recrutons pour :",
+        announcement: "À partir du 14 septembre — Nous recrutons pour :",
         positions: {
             title: 'Postes ouverts',
-            description: 'Voici les postes que nous recherchons dans notre campagne de recrutement d’automne.',
-            list: ['Responsable unité maintenance','Responsable unité fabrication','Technicien maintenance','Technicien facilities','Apprenti maintenance','Autre poste']
+            description: 'Voici le poste que nous recherchons dans notre campagne de recrutement d’automne.',
+            featured: 'Technicien Usinage – Pilote Système de Production – Usinage',
+            list: ['Technicien Usinage – Pilote Système de Production – Usinage']
         },
         btn: { apply: 'Postuler', discover: 'Découvrir le programme' },
         about: { title: 'Pourquoi Stellantis Maroc ?', text: "Stellantis est l'un des principaux constructeurs automobiles mondiaux, réunissant des marques emblématiques et des technologies innovantes. À l'usine de Kénitra, nous nous engageons pour l'excellence, l'innovation et le développement des jeunes talents. Chaque année, nous accueillons des candidats motivés qui souhaitent acquérir une expérience industrielle précieuse et contribuer à l'avenir d'une mobilité durable.", highlight1: 'Entreprise mondiale', highlight2: 'Innovation', highlight3: 'Opportunités de carrière', highlight4: 'Développement professionnel' },
@@ -73,7 +79,9 @@ function translatePage(lang) {
 
     // positions list (array)
     if (positionsList && translations[lang].positions && translations[lang].positions.list) {
-        positionsList.innerHTML = translations[lang].positions.list.map(p => `<li>${p}</li>`).join('');
+        positionsList.innerHTML = translations[lang].positions.list
+            .map(p => `<li><a href="${APPLY_FORM_URL}" target="_blank" rel="noopener">${p}</a></li>`)
+            .join('');
     }
 
     // page title
