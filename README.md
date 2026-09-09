@@ -36,8 +36,8 @@ text will flip back when the visitor toggles language.
 
 ## Still to update for this campaign
 
-- [ ] **Open positions** — the six roles are carried over from summer
-      (`positions.list` in both locales, and the `<ul id="positions">` fallback).
-- [ ] **Application form link** — confirm the Tally/Google form target is the
-      autumn form, not the summer one.
-- [ ] **Hero imagery** — `assets/` still holds the summer campaign photography.
+- [ ] **Hero imagery** — check `assets/` now that the logo and background have
+      been replaced.
+- [ ] **English job title** — the post is named in French in both locales
+      (`positions.featured` / `positions.list`). Translate it for `en` if the
+      English page should carry an English title.
