@@ -6,38 +6,3 @@ pre-selection step.
 
 Succeeds the Summer 2026 campaign, whose final state is archived in the
 `summer_recruitment` repository at tag `v1.0-summer-2026`.
-
-## Structure
-
-| File | Purpose |
-|------|---------|
-| `index.html` | The full single-page site |
-| `style.css` | All styling |
-| `script.js` | Translations (EN/FR), navigation, interviewer access modal |
-| `page-template.html` | Starting point for additional sub-pages |
-| `assets/` | Images and videos |
-
-## Running locally
-
-No build step — plain HTML, CSS and JavaScript.
-
-```bash
-python -m http.server 8000
-```
-
-Then open <http://localhost:8000>.
-
-## Editing campaign text
-
-All visible copy exists twice: as fallback text in `index.html` (on elements
-carrying a `data-i18n` key) and in the `translations` object at the top of
-`script.js`, which holds the `en` and `fr` versions. **Change both**, or the
-text will flip back when the visitor toggles language.
-
-## Still to update for this campaign
-
-- [ ] **Hero imagery** — check `assets/` now that the logo and background have
-      been replaced.
-- [ ] **English job title** — the post is named in French in both locales
-      (`positions.featured` / `positions.list`). Translate it for `en` if the
-      English page should carry an English title.
