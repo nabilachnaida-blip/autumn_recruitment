@@ -9,10 +9,6 @@ const langToggle = document.getElementById('langToggle');
 const positionsList = document.getElementById('positions');
 const pageTitle = document.getElementById('pageTitle');
 
-// Candidate application form. Also hardcoded on the Apply Now buttons and the
-// hero position card in index.html — if it changes, update it in both places.
-const APPLY_FORM_URL = 'https://tally.so/r/Me4j7p';
-
 // Translations dictionary (English + French)
 const translations = {
     en: {
@@ -88,11 +84,13 @@ function translatePage(lang) {
         }
     });
 
-    // positions list (array)
+    // positions list (array) — only the labels are translated; each position's
+    // form link is set in index.html
     if (positionsList && translations[lang].positions && translations[lang].positions.list) {
-        positionsList.innerHTML = translations[lang].positions.list
-            .map(p => `<li><a href="${APPLY_FORM_URL}" target="_blank" rel="noopener">${p}</a></li>`)
-            .join('');
+        const links = positionsList.querySelectorAll('a');
+        translations[lang].positions.list.forEach((p, i) => {
+            if (links[i]) links[i].textContent = p;
+        });
     }
 
     // page title
