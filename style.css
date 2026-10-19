@@ -257,6 +257,10 @@ body {
     max-width: 720px;
 }
 
+.hero-announcement a {
+    color: inherit;
+}
+
 .positions-section .section-title {
     margin-bottom: 12px;
 }

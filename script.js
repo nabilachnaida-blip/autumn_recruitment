@@ -6,7 +6,6 @@ const navbar = document.getElementById('navbar');
 const hamburger = document.getElementById('hamburger');
 const navbarMenu = document.getElementById('navbarMenu');
 const langToggle = document.getElementById('langToggle');
-const announcement = document.getElementById('announcement');
 const positionsList = document.getElementById('positions');
 const pageTitle = document.getElementById('pageTitle');
 
@@ -25,9 +24,15 @@ const translations = {
         announcement: 'From September 14 — We are hiring for:',
         positions: {
             title: 'Open Positions',
-            description: 'This is the role we are looking for in our autumn recruitment campaign.',
+            description: 'These are the roles we are looking for in our autumn recruitment campaign.',
             featured: 'Technicien Usinage/ Pilote Système de Production',
-            list: ['Technicien Usinage/ Pilote Système de Production']
+            list: [
+                'Technicien Usinage/ Pilote Système de Production',
+                'Professionnel de la maintenance',
+                'Responsable d’unité de maintenance',
+                'Retoucheur',
+                'Responsable de groupe'
+            ]
         },
         btn: { apply: 'Apply Now', discover: 'Discover the Program' },
         about: { title: 'Why Stellantis Morocco?', text: "Stellantis is one of the world's leading automotive manufacturers, bringing together iconic brands and innovative technologies. At the Kenitra plant, we are committed to excellence, innovation, and the development of young talent. Every year, we welcome motivated candidates who wish to gain valuable industrial experience while contributing to the future of sustainable mobility.", highlight1: 'Global Company', highlight2: 'Innovation', highlight3: 'Career Opportunities', highlight4: 'Professional Growth' },
@@ -47,9 +52,15 @@ const translations = {
         announcement: "À partir du 14 septembre — Nous recrutons pour :",
         positions: {
             title: 'Postes ouverts',
-            description: 'Voici le poste que nous recherchons dans notre campagne de recrutement d’automne.',
+            description: 'Voici les postes que nous recherchons dans notre campagne de recrutement d’automne.',
             featured: 'Technicien Usinage/ Pilote Système de Production',
-            list: ['Technicien Usinage/ Pilote Système de Production']
+            list: [
+                'Technicien Usinage/ Pilote Système de Production',
+                'Professionnel de la maintenance',
+                'Responsable d’unité de maintenance',
+                'Retoucheur',
+                'Responsable de groupe'
+            ]
         },
         btn: { apply: 'Postuler', discover: 'Découvrir le programme' },
         about: { title: 'Pourquoi Stellantis Maroc ?', text: "Stellantis est l'un des principaux constructeurs automobiles mondiaux, réunissant des marques emblématiques et des technologies innovantes. À l'usine de Kénitra, nous nous engageons pour l'excellence, l'innovation et le développement des jeunes talents. Chaque année, nous accueillons des candidats motivés qui souhaitent acquérir une expérience industrielle précieuse et contribuer à l'avenir d'une mobilité durable.", highlight1: 'Entreprise mondiale', highlight2: 'Innovation', highlight3: 'Opportunités de carrière', highlight4: 'Développement professionnel' },
@@ -86,9 +97,6 @@ function translatePage(lang) {
 
     // page title
     if (pageTitle && translations[lang].title) pageTitle.textContent = translations[lang].title;
-
-    // announcement
-    if (announcement && translations[lang].announcement) announcement.textContent = translations[lang].announcement;
 
     // update lang toggle label (show the other language)
     if (langToggle) {
